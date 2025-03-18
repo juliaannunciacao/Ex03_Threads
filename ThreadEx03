@@ -1,0 +1,26 @@
+import java.util.Random;
+ 
+class ThreadVetor extends Thread {
+    private int valor;
+    private int[] vetor;
+    public ThreadVetor(int valor, int[] vetor) {
+        this.valor = valor;
+        this.vetor = vetor;
+    }
+    @Override
+    public void run() {
+        long Tinicial= System.nanoTime(); 
+        if (valor % 2 == 0) {
+            for (int i = 0; i < vetor.length; i++) {
+                int temp = vetor[i];
+            }
+        } else {
+            for (int num : vetor) {
+                int temp = num;
+            }
+        }
+        long Tfinal = System.nanoTime(); 
+        double Ttotal= (Tfinal- Tinicial) / 1_000_000_000.0;
+        System.out.println("Tempo de execução para o valor " + valor + ": " + Ttotal+ " segundos");
+    }
+}
